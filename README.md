@@ -153,6 +153,91 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
 
 ![image(1)](https://github.com/user-attachments/assets/05f3e672-af1f-4663-8584-ec556bfec3c8)
 
+# Presentasi UML Diagram Sistem Penyewaan Sepeda
+
+## Pengantar
+* Sistem penyewaan sepeda adalah aplikasi yang memungkinkan pengguna untuk menyewa dan mengembalikan sepeda
+* Diagram UML ini menggambarkan struktur dan interaksi antar komponen dalam sistem
+
+## Komponen Utama
+
+### RentalBikeSystem
+* Merupakan kelas utama yang mengkoordinasikan seluruh sistem
+* Memiliki dua komponen utama: RentButton dan ReturnButton
+* Bertanggung jawab untuk menciptakan (creates) seluruh komponen sistem:
+  - RentButton
+  - ReturnButton
+  - BikeStation
+  - BikeReturn
+
+### BikeStation
+* Komponen pusat yang mengelola inventaris sepeda
+* Memiliki atribut:
+  - inventory: Menyimpan jumlah sepeda per kategori
+  - activeRentals: Daftar penyewaan yang sedang berlangsung
+  - completedRentals: Daftar penyewaan yang telah selesai
+* Mengimplementasikan dua interface:
+  - RentalInterface: Untuk proses penyewaan
+  - BikeInterface: Untuk validasi dan pengelolaan status penyewaan
+
+### BikeReturn
+* Menangani operasi pengembalian sepeda
+* Memerlukan (requires) BikeInterface untuk validasi dan penyelesaian penyewaan
+* Mengimplementasikan ReturnInterface
+
+### RentButton & ReturnButton
+* Komponen antarmuka pengguna untuk operasi penyewaan dan pengembalian
+* Keduanya mengimplementasikan UserInterface yang menentukan perilaku tombol
+* RentButton memerlukan RentalInterface
+* ReturnButton memerlukan ReturnInterface
+
+## Interface Sistem
+
+### UserInterface
+* Mendefinisikan perilaku tombol dengan metode buttonPressed()
+* Diimplementasikan oleh RentButton dan ReturnButton
+
+### RentalInterface
+* Mendefinisikan operasi penyewaan sepeda
+* Metode utama: rentBike(category, hours)
+* Diimplementasikan oleh BikeStation
+
+### ReturnInterface
+* Mendefinisikan operasi pengembalian sepeda
+* Metode utama: returnBike(rentalId)
+* Diimplementasikan oleh BikeReturn
+
+### BikeInterface
+* Interface untuk manajemen inventaris dan validasi
+* Metode utama:
+  - isRentalValid(rentalId)
+  - registerRental(rentalId, category, hours)
+  - completeRental(rentalId)
+* Diimplementasikan oleh BikeStation
+
+## Alur Penyewaan Sepeda
+1. Pengguna menekan RentButton (buttonPressed())
+2. RentButton memanggil metode rentBike() dari RentalInterface
+3. BikeStation memproses penyewaan dan menghasilkan ID penyewaan
+4. BikeStation mendaftarkan penyewaan baru dengan registerRental()
+
+## Alur Pengembalian Sepeda
+1. Pengguna menekan ReturnButton (buttonPressed())
+2. ReturnButton memanggil metode returnBike() dari ReturnInterface
+3. BikeReturn memvalidasi ID penyewaan menggunakan isRentalValid() dari BikeInterface
+4. Jika valid, BikeReturn memanggil completeRental() untuk menyelesaikan penyewaan
+
+## Keunggulan Desain
+* Modular: Setiap komponen memiliki tanggung jawab yang jelas
+* Loosely coupled: Komponen berinteraksi melalui interface
+* Extensible: Mudah untuk menambahkan fitur baru tanpa mengubah komponen yang ada
+* Maintainable: Struktur yang jelas membuat kode mudah dirawat
+
+## Kesimpulan
+* UML diagram ini menunjukkan desain berorientasi objek yang baik dengan prinsip SOLID
+* Penggunaan interface memungkinkan fleksibilitas dan testability yang tinggi
+* Arsitektur yang terstruktur memudahkan pengembangan dan pemeliharaan di masa depan
+
 ## Pengembangan Selanjutnya
 
 Beberapa ide pengembangan lebih lanjut:
