@@ -152,7 +152,7 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
 ![image(1)](https://github.com/user-attachments/assets/05f3e672-af1f-4663-8584-ec556bfec3c8)
 
 ## Komponen Utama
-### RentalBikeSystem
+### 1. RentalBikeSystem
 * Merupakan kelas utama yang mengkoordinasikan seluruh sistem
 * Memiliki dua komponen utama: RentButton dan ReturnButton
 * Bertanggung jawab untuk menciptakan (creates) seluruh komponen sistem:
@@ -161,7 +161,7 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
   - BikeStation
   - BikeReturn
 
-### BikeStation
+### 2. BikeStation
 * Komponen pusat yang mengelola inventaris sepeda
 * Memiliki atribut:
   - inventory: Menyimpan jumlah sepeda per kategori
@@ -171,12 +171,12 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
   - RentalInterface: Untuk proses penyewaan
   - BikeInterface: Untuk validasi dan pengelolaan status penyewaan
 
-### BikeReturn
+### 3. BikeReturn
 * Menangani operasi pengembalian sepeda
 * Memerlukan (requires) BikeInterface untuk validasi dan penyelesaian penyewaan
 * Mengimplementasikan ReturnInterface
 
-### RentButton & ReturnButton
+### 4. RentButton & ReturnButton
 * Komponen antarmuka pengguna untuk operasi penyewaan dan pengembalian
 * Keduanya mengimplementasikan UserInterface yang menentukan perilaku tombol
 * RentButton memerlukan RentalInterface
@@ -184,21 +184,21 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
 
 ## Interface Sistem
 
-### UserInterface
+### 1. UserInterface
 * Mendefinisikan perilaku tombol dengan metode buttonPressed()
 * Diimplementasikan oleh RentButton dan ReturnButton
 
-### RentalInterface
+### 2. RentalInterface
 * Mendefinisikan operasi penyewaan sepeda
 * Metode utama: rentBike(category, hours)
 * Diimplementasikan oleh BikeStation
 
-### ReturnInterface
+### 3. ReturnInterface
 * Mendefinisikan operasi pengembalian sepeda
 * Metode utama: returnBike(rentalId)
 * Diimplementasikan oleh BikeReturn
 
-### BikeInterface
+### 4. BikeInterface
 * Interface untuk manajemen inventaris dan validasi
 * Metode utama:
   - isRentalValid(rentalId)
