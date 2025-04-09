@@ -1,5 +1,3 @@
-# RentalBikeSystem
-
 # Rental Bike System
 
 Sistem penyewaan sepeda yang dibangun menggunakan pendekatan **Component-Based Software Engineering (CBSE)** dengan penerapan konsep *provided* dan *required interface*.
@@ -153,14 +151,7 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
 
 ![image(1)](https://github.com/user-attachments/assets/05f3e672-af1f-4663-8584-ec556bfec3c8)
 
-# Presentasi UML Diagram Sistem Penyewaan Sepeda
-
-## Pengantar
-* Sistem penyewaan sepeda adalah aplikasi yang memungkinkan pengguna untuk menyewa dan mengembalikan sepeda
-* Diagram UML ini menggambarkan struktur dan interaksi antar komponen dalam sistem
-
 ## Komponen Utama
-
 ### RentalBikeSystem
 * Merupakan kelas utama yang mengkoordinasikan seluruh sistem
 * Memiliki dua komponen utama: RentButton dan ReturnButton
