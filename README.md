@@ -18,6 +18,9 @@ Sistem ini dirancang menggunakan prinsip CBSE dengan pendekatan *Design by Contr
 
 ## Struktur Komponen
 
+![ComponentDiagram](https://github.com/user-attachments/assets/dd0a20a4-7549-40d8-8d35-caae71a8f494)
+
+
 Diagram sistem terdiri dari 5 komponen utama dan 4 antarmuka sebagai penghubung antar komponen:
 
 ### Komponen
@@ -145,6 +148,10 @@ Sistem ini menggunakan pendekatan Design by Contract yang mencakup:
 - **Required Interface:** Kontrak layanan yang dibutuhkan dari komponen lain
 - **Preconditions:** Syarat yang harus dipenuhi sebelum operasi dilakukan (misalnya, sepeda harus tersedia)
 - **Postconditions:** Jaminan hasil setelah operasi selesai (misalnya, ID penyewaan valid)
+
+## Diagram UML
+
+![image(1)](https://github.com/user-attachments/assets/05f3e672-af1f-4663-8584-ec556bfec3c8)
 
 ## Pengembangan Selanjutnya
 
