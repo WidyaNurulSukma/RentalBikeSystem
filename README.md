@@ -14,9 +14,9 @@ Aplikasi ini merupakan implementasi sistem penyewaan dan pengembalian sepeda. Fi
 
 Sistem ini dirancang menggunakan prinsip CBSE dengan pendekatan *Design by Contract*, mengandalkan interaksi antar komponen melalui antarmuka (interfaces) yang jelas dan terdefinisi.
 
-## Struktur Komponen
+## Struktur Komponen\
 
-![ComponentDiagram](https://github.com/user-attachments/assets/dd0a20a4-7549-40d8-8d35-caae71a8f494)
+![image](https://github.com/user-attachments/assets/d4002ef4-d8c2-4ca0-941f-eac214f9c827)
 
 
 Diagram sistem terdiri dari 5 komponen utama dan 4 antarmuka sebagai penghubung antar komponen:
